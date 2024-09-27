@@ -54,7 +54,7 @@ section {
 h2, h3 {
     text-align: center;
     margin-bottom: 2rem;
-    padding: 0 15px; /* Добавляем отступы слева и справа */
+    padding: 0 15px;
 }
 
 h2 {
@@ -157,9 +157,9 @@ h3 {
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 800px; /* Ограничиваем максимальную ширину */
-    margin-left: auto; /* Центрируем блок */
-    margin-right: auto; /* Центрируем блок */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .program-day h4 {
@@ -201,12 +201,12 @@ h3 {
     text-align: left;
     max-width: 600px;
     margin: 0 auto;
-    padding: 0 20px; /* Добавляем отступы слева и справа */
+    padding: 0 20px;
 }
 
 .author-achievements li {
     margin-bottom: 0.5rem;
-    padding-left: 2rem; /* Увеличиваем отступ слева */
+    padding-left: 2rem;
     position: relative;
 }
 
@@ -215,7 +215,7 @@ h3 {
     position: absolute;
     left: 0;
     color: #4CAF50;
-    font-size: 1.2em; /* Увеличиваем размер галочки */
+    font-size: 1.2em;
 }
 
 footer {
@@ -259,7 +259,7 @@ footer {
     width: 1000px;
     position: relative;
     box-sizing: border-box;
-    margin: 5vh auto; /* Добавляем отступ сверху и снизу */
+    margin: 5vh auto;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -289,26 +289,24 @@ footer {
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%; /* Растягиваем input на всю ширину формы */
+    width: 100%;
 }
 
-/* Медиа-запрос для мобильных устройств */
+
 @media (max-width: 768px) {
     .modal-content {
-        width: 95%; /* Уменьшаем ширину на мобильных устройствах */
-        padding: 1rem; /* Уменьшаем отступы */
-        margin: 1rem auto; /* Уменьшаем отступ на мобильных устройствах */
+        width: 95%;
+        padding: 1rem;
+        margin: 1rem auto;
     }
 }
 
-/* Добавим медиа-запрос для более точной настройки на десктопах */
 @media (min-width: 1024px) {
     .program-day {
-        width: 80%; /* Устанавливаем ширину в процентах для гибкости */
+        width: 80%;
     }
 }
 
-/* Обновляем стили для hero section */
 .hero-section {
     background-image: url('path/to/your/background-image.jpg');
     background-size: cover;
@@ -330,7 +328,6 @@ footer {
     animation: fadeInUp 1s ease-out 0.5s;
 }
 
-/* Удаляем дублирующие стили для .cta-button, так как они уже определены выше */
 
 @keyframes pulse {
     0% {
@@ -344,7 +341,6 @@ footer {
     }
 }
 
-/* Медиа-запрос для мобильных устройств */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2.5rem;
@@ -363,7 +359,7 @@ footer {
 .value-proposition {
     font-size: 1.2em;
     font-weight: bold;
-    color: #ff6600; /* Or any color that fits your design */
+    color: #ff6600;
     margin: 20px 0;
     text-align: center;
     max-width: 80%;
