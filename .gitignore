@@ -1,1 +1,3 @@
 .env
+start-server.sh
+.vscode/tasks.json
