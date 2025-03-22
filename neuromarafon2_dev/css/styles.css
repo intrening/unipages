@@ -281,20 +281,6 @@ footer {
     color: #000;
 }
 
-#registration-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#registration-form input {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-}
-
 #form-iframe {
     width: 100%;
     min-height: 500px;

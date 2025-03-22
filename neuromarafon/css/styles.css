@@ -262,6 +262,9 @@ footer {
     margin: 5vh auto;
     top: 50%;
     transform: translateY(-50%);
+    min-height: 300px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .close-button {
@@ -278,20 +281,12 @@ footer {
     color: #000;
 }
 
-#registration-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#registration-form input {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#form-iframe {
     width: 100%;
+    min-height: 500px;
+    border: none;
+    overflow: hidden;
 }
-
 
 @media (max-width: 768px) {
     .modal-content {
