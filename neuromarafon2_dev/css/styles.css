@@ -262,6 +262,9 @@ footer {
     margin: 5vh auto;
     top: 50%;
     transform: translateY(-50%);
+    min-height: 300px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .close-button {
@@ -292,6 +295,12 @@ footer {
     width: 100%;
 }
 
+#form-iframe {
+    width: 100%;
+    min-height: 500px;
+    border: none;
+    overflow: hidden;
+}
 
 @media (max-width: 768px) {
     .modal-content {

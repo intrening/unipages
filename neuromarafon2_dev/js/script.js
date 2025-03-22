@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('modal');
     const ctaButtons = document.querySelectorAll('.cta-button');
     const closeButton = document.querySelector('.close-button');
-    const form = document.getElementById('registration-form');
-
+    
     function openModal() {
         if (modal) {
             modal.style.display = 'block';
@@ -31,14 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (event.target === modal) {
                 closeModal();
             }
-        });
-    }
-
-    if (form) {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Форма отправлена!');
-            closeModal();
         });
     }
 
