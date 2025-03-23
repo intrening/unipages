@@ -54,7 +54,7 @@ section {
 h2, h3 {
     text-align: center;
     margin-bottom: 2rem;
-    padding: 0 15px;
+    /* padding: 0 15px; */
 }
 
 h2 {
