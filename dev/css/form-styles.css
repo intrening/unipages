@@ -1,0 +1,96 @@
+/* Form Styles */
+.form-heading {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.lt-form {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lt-form input[type="text"],
+.lt-form input[type="email"] {
+  padding: 18px 25px;
+  border-radius: 30px;
+  border: 1px solid #e0e0e0;
+  font-size: 18px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.lt-form input[type="text"]:focus,
+.lt-form input[type="email"]:focus {
+  border-color: #217dd9;
+}
+
+.lt-form input:invalid {
+  border-color: #e74c3c;
+}
+
+.lt-form button[type="submit"] {
+  padding: 18px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 100%;
+  background-color: #217dd9;
+  color: #ffffff;
+  border-radius: 30px;
+}
+
+.lt-form button[type="submit"]:hover {
+  background-color: #1a6ab9 !important;
+  transform: translateY(-2px);
+}
+
+.lt-form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Modal styles enhancement */
+.modal-content {
+  padding: 40px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .lt-form {
+    max-width: 100%;
+  }
+  
+  .form-heading {
+    font-size: 24px;
+  }
+  
+  .lt-form input[type="text"],
+  .lt-form input[type="email"],
+  .lt-form button[type="submit"] {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+} 
