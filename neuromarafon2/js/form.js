@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
     <span id="gccounterImgContainer"></span>
   `;
   
+  const form = document.getElementById('ltForm6670800');
+  form.addEventListener('submit', function(e) {
+    // Track Facebook Pixel Lead event
+    fbq('track', 'Lead');
+  });
+
   // Add the statistics tracking script
   let loc = document.getElementById("127518367dfe54c3cfce");
   loc.value = window.location.href;
