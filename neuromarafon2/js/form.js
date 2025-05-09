@@ -1,4 +1,11 @@
+// widget form https://universuspro.ru/pl/lite/widget/editor?id=1275183
+
 document.addEventListener('DOMContentLoaded', function() {
+
+  const eventID = 'px_' + Date.now().toString(36) + '_' + Math.random().toString(36).substring(2, 15);
+  window.eventID = eventID.substring(0, 36);
+  console.log('eventID', eventID);
+  
   const formContainer = document.getElementById('form-container');
   
   formContainer.innerHTML = `
@@ -18,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
           Записаться
       </button>
       <input name="formParams[userCustomFields][626013]" type="hidden">
+      <input id="field-input-10906343" type="hidden" name="formParams[userCustomFields][10906343]" value="">
       <input type="hidden" id="127518367dfe54c3cfce" name="__gc__internal__form__helper" class="__gc__internal__form__helper" value="">
       <input type="hidden" id="127518367dfe54c3cfceref" name="__gc__internal__form__helper_ref" class="__gc__internal__form__helper_ref" value="">
       <input type="hidden" name="requestTime" value="1742726476">
@@ -27,10 +35,60 @@ document.addEventListener('DOMContentLoaded', function() {
     <span id="gccounterImgContainer"></span>
   `;
   
+  // Set eventID to the hidden field
+  const eventIDField = document.getElementById('field-input-10906343');
+  if (eventIDField) {
+    eventIDField.value = window.eventID;
+  }
+  
   const form = document.getElementById('ltForm6670800');
   form.addEventListener('submit', function(e) {
-    // Track Facebook Pixel Lead event
-    fbq('track', 'Lead');
+    // Get user email
+    const emailInput = document.querySelector('input[name="formParams[email]"]');
+    const userEmail = emailInput ? emailInput.value.trim().toLowerCase() : null;
+    
+    if (!userEmail) {
+      console.warn('Email пользователя не найден. Отправка события Lead отменена.');
+      return;
+    }
+    
+    // Facebook Pixel tracking with eventID
+    const PIXEL_ID = '182602654894632';
+    
+    // Check if fbq is already initialized
+    if (typeof fbq === 'undefined') {
+      // Load Facebook Pixel base script
+      (function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      
+      // Initialize Facebook Pixel with Advanced Matching
+      fbq('init', PIXEL_ID, {
+        em: userEmail
+      });
+    }
+    
+    // Track Lead event with eventID
+    if (window.eventID) {
+      fbq('track', 'Lead', {}, { eventID: window.eventID });
+    } else {
+      console.warn('eventID не определён. Событие Lead не отправлено.');
+    }
   });
 
   // Add the statistics tracking script
